@@ -104,6 +104,39 @@
         .content-window .decade-1990 { background-color: #f97316; }
         .content-window .decade-1980 { background-color: #ef4444; }
         .content-window .decade-1960 { background-color: #6b7280; }
+        
+        /* Estilos para los botones de herramientas */
+        .topic-button { 
+            border: 1px solid transparent;
+            color: #374151; 
+            padding: 1rem; 
+            text-align: left; 
+            transition: all 0.2s ease-in-out; 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center; 
+            gap: 0.75rem; 
+            text-decoration: none;
+            font-weight: 600;
+        }
+		.topic-button:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+        }
+		.topic-number { 
+            border-radius: 9999px; 
+            font-weight: 700; 
+            font-size: 1.125rem; 
+            width: 2.75rem; 
+            height: 2.75rem; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-shrink: 0; 
+        }
+		.topic-title { 
+            flex-grow: 1; 
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -158,13 +191,22 @@
             ];
 
             const sourceFiles = [
-                { name: 'Definiciones', path: 'DEFINICIONES_CAR.html', color: 'bg-violet-500' },
-                { name: 'Listas', path: 'LISTAS_CAR.html', color: 'bg-fuchsia-500' },
-                { name: 'Normativa', path: 'NORMATIVA_CAR.html', color: 'bg-amber-500' },
-                { name: 'Números', path: 'NUMEROS_CAR.html', color: 'bg-rose-500' },
-                { name: 'Plazos', path: 'PLAZOS_CAR.html', color: 'bg-sky-500' },
-                { name: 'Años', path: 'AÑOS_CAR.html', color: 'bg-lime-500' }
+                { name: 'Definiciones', path: 'DEFINICIONES_CAR.html', color: 'violet', icon: 'fa-book' },
+                { name: 'Listas', path: 'LISTAS_CAR.html', color: 'fuchsia', icon: 'fa-list-ol' },
+                { name: 'Normativa', path: 'NORMATIVA_CAR.html', color: 'amber', icon: 'fa-gavel' },
+                { name: 'Números', path: 'NUMEROS_CAR.html', color: 'rose', icon: 'fa-hashtag' },
+                { name: 'Plazos', path: 'PLAZOS_CAR.html', color: 'sky', icon: 'fa-calendar-alt' },
+                { name: 'Años', path: 'AÑOS_CAR.html', color: 'lime', icon: 'fa-history' }
             ];
+            
+            const colorPalette = {
+                sky:    { button: 'bg-sky-50 hover:bg-sky-100', number: 'bg-sky-200 text-sky-800' },
+                lime:   { button: 'bg-lime-50 hover:bg-lime-100', number: 'bg-lime-200 text-lime-800' },
+                violet: { button: 'bg-violet-50 hover:bg-violet-100', number: 'bg-violet-200 text-violet-800' },
+                fuchsia:{ button: 'bg-fuchsia-50 hover:bg-fuchsia-100', number: 'bg-fuchsia-200 text-fuchsia-800' },
+                amber:  { button: 'bg-amber-50 hover:bg-amber-100', number: 'bg-amber-200 text-amber-800' },
+                rose:   { button: 'bg-rose-50 hover:bg-rose-100', number: 'bg-rose-200 text-rose-800' }
+            };
 
             // Poblar el dropdown de temas
             topics.forEach(topic => {
@@ -183,26 +225,20 @@
 
                 const parser = new DOMParser();
                 
-                // Procesar todos los archivos en paralelo
                 await Promise.all(sourceFiles.map(async (fileInfo) => {
                     try {
-                        // FIX: Prepend './' to the path to make it a valid relative URL for fetch.
                         const response = await fetch('./' + fileInfo.path);
-                        if (!response.ok) {
-                            console.error(`Error al cargar el archivo: ${fileInfo.path}`);
-                            return; // Saltar este archivo si hay un error
-                        }
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                        
                         const htmlText = await response.text();
                         const doc = parser.parseFromString(htmlText, 'text/html');
 
-                        // Encontrar el encabezado del tema
                         const topicHeaders = Array.from(doc.querySelectorAll('h2'));
                         const topicHeader = topicHeaders.find(h => h.textContent.trim() === selectedTopic);
                         
                         let contentHTML = '<p class="text-gray-500 text-center p-4">No se encontró contenido para este tema en este archivo.</p>';
 
                         if (topicHeader) {
-                            // Extraer el contenido asociado a ese tema
                             let currentNode = topicHeader.nextElementSibling;
                             const contentBlock = document.createElement('div');
                             while (currentNode && currentNode.tagName !== 'H2') {
@@ -214,14 +250,17 @@
                             }
                         }
                         
-                        // Crear la ventana de contenido
+                        const palette = colorPalette[fileInfo.color];
                         const windowDiv = document.createElement('div');
                         windowDiv.className = 'flex flex-col bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden';
                         windowDiv.innerHTML = `
-                            <div class="${fileInfo.color} text-white font-bold text-lg p-3 text-center shadow-md">
-                                ${fileInfo.name}
-                            </div>
-                            <div class="content-window p-4 overflow-y-auto h-96">
+                            <a href="./${fileInfo.path}" target="_blank" class="topic-button ${palette.button} p-4">
+                                <span class="topic-number ${palette.number}">
+                                    <i class="fas ${fileInfo.icon}"></i>
+                                </span>
+                                <span class="topic-title">${fileInfo.name}</span>
+                            </a>
+                            <div class="content-window p-4 overflow-y-auto h-96 border-t border-gray-200">
                                 ${contentHTML}
                             </div>
                         `;
@@ -230,7 +269,7 @@
                     } catch (error) {
                         console.error(`Error procesando el archivo ${fileInfo.path}:`, error);
                         const errorDiv = document.createElement('div');
-                        errorDiv.className = 'bg-white rounded-xl shadow-lg border border-red-300 p-4';
+                        errorDiv.className = 'flex flex-col bg-white rounded-xl shadow-lg border border-red-300 p-4';
                         errorDiv.innerHTML = `<h3 class="font-bold text-red-600">${fileInfo.name}</h3><p>Error al cargar el contenido.</p>`;
                         resultsGrid.appendChild(errorDiv);
                     }
@@ -239,10 +278,22 @@
                 loadingSpinner.style.display = 'none';
             };
 
-            // Event listener para el cambio en el selector de temas
+            window.addEventListener('message', (event) => {
+                if (event.data && event.data.topic) {
+                    const receivedTopic = event.data.topic;
+                    const topicExists = Array.from(topicSelect.options).some(opt => opt.value === receivedTopic);
+
+                    if (topicExists) {
+                        topicSelect.value = receivedTopic;
+                        displayTopicContent();
+                    } else {
+                        console.warn(`El tema "${receivedTopic}" recibido no se encontró.`);
+                    }
+                }
+            });
+
             topicSelect.addEventListener('change', displayTopicContent);
 
-            // Cargar el contenido del primer tema al iniciar la página
             displayTopicContent();
         });
     </script>
