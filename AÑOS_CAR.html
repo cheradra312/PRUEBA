@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronología Temática de Carreteras</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative; 
+        }
+        h1, h2 {
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.8rem; /* Adjusted title size */
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: flex-start;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .date-pill {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            color: #fff;
+            min-width: 80px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .description {
+            display: inline;
+        }
+        
+        /* --- Legend Styles --- */
+        .legend {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            margin: 1rem auto 2rem auto; /* Centered below title */
+            max-width: 600px;
+        }
+        .legend h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: #343a40;
+            text-align: center;
+            border-bottom: none;
+        }
+        .legend ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            justify-content: center; /* Centers the items */
+            gap: 1rem; /* Space between items */
+        }
+        .legend li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0; /* Removed bottom margin */
+            border: none;
+            padding: 0;
+        }
+        .legend .color-box {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+            border-radius: 0.25rem;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* --- Progressive Decade Colors --- */
+        .decade-2020 { background-color: #14b8a6; } /* Teal */
+        .decade-2010 { background-color: #84cc16; } /* Lime Green */
+        .decade-2000 { background-color: #f59e0b; } /* Amber */
+        .decade-1990 { background-color: #f97316; } /* Orange */
+        .decade-1980 { background-color: #ef4444; } /* Red */
+        .decade-1960 { background-color: #6b7280; } /* Gray */
+
+        /* --- Normative Pill Styles --- */
+        .pill, .law-pill, .directive-pill, .pill-blue, .doc-pill {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin: 0 0.2rem;
+            white-space: normal;
+            line-height: 1.2;
+            vertical-align: middle;
+        }
+        .pill-blue { background-color: #dbeafe; color: #1e4d91; border: 1px solid #93c5fd; }
+        .law-pill { background-color: #f3e8ff; color: #581c87; border: 1px solid #c084fc; }
+        .directive-pill { background-color: #166534; color: #dcfce7; border: 1px solid #15803d; }
+        .doc-pill { background-color: #dcfce7; color: #166534; border: 1px solid #4ade80; font-weight: 700; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Cronología Temática de Normativa y Eventos</h1>
+        
+        <div class="legend">
+            <h3>Leyenda de Décadas</h3>
+            <ul>
+                <li><span class="color-box decade-2020"></span> 2020s</li>
+                <li><span class="color-box decade-2010"></span> 2010s</li>
+                <li><span class="color-box decade-2000"></span> 2000s</li>
+                <li><span class="color-box decade-1990"></span> 1990s</li>
+                <li><span class="color-box decade-1980"></span> 1980s</li>
+                <li><span class="color-box decade-1960"></span> 1960s</li>
+            </ul>
+        </div>
+
+        <h2>MEB1T1. La legislación de Carreteras</h2>
+        <ul>
+            <li><span class="date-pill decade-1990">1994</span><span class="description">Aprobación del <span class="law-pill">Reglamento General de Carreteras</span>, que desarrolla la Ley 25/1988.</span></li>
+            <li><span class="date-pill decade-2010">2015</span><span class="description">Aprobación de la <span class="law-pill">Ley 37/2015 de Carreteras</span>, que establece un plazo de un año para un nuevo reglamento. Entra en vigor el 1 de octubre.</span></li>
+            <li><span class="date-pill decade-2020">2024</span><span class="description">Aprobación del <span class="law-pill">Real Decreto 253/2024</span>, que desarrolla la estructura orgánica básica del MITMS.</span></li>
+        </ul>
+
+        <h2>MEB1T2. Planificación estratégica y programas</h2>
+        <ul>
+            <li><span class="date-pill decade-2010">2010</span><span class="description">Aprobación de la <span class="pill-blue">Orden FOM/3317/2010</span> para la mejora de la eficiencia en obras públicas.</span></li>
+            <li><span class="date-pill decade-2010">2014</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio 3/2014</span> sobre estudios de rentabilidad.</span></li>
+        </ul>
+
+        <h2>MEB1T3. Estudios de carreteras (I)</h2>
+        <ul>
+            <li><span class="date-pill decade-2000">2007</span><span class="description">Publicación de la <span class="pill-blue">Orden Circular 22/2007</span> sobre procedencia de materiales.</span></li>
+            <li><span class="date-pill decade-2020">2024</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio 3/2024</span> sobre cartografía y topografía.</span></li>
+            <li><span class="date-pill decade-2020">2025</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio 1/2025</span> sobre cartografía y topografía.</span></li>
+        </ul>
+
+        <h2>MEB1T4. Estudios de carreteras (II)</h2>
+        <ul>
+            <li><span class="date-pill decade-1960">1960</span><span class="description">Se elabora el primer <strong>Mapa de Tráfico</strong>.</span></li>
+        </ul>
+        
+        <h2>MEB1T5. Trazado de carreteras</h2>
+        <ul>
+            <li><span class="date-pill decade-2020">2021</span><span class="description">Publicación de la <span class="pill-blue">Orden Circular 1/2021</span> sobre diseño de carreteras 2+1.</span></li>
+        </ul>
+
+        <h2>MEB1T6. Drenaje</h2>
+        <ul>
+            <li><span class="date-pill decade-2000">2003</span><span class="description">Publicación de la <span class="pill-blue">Orden Circular 17/2003</span> sobre drenaje subterráneo.</span></li>
+            <li><span class="date-pill decade-2010">Marzo 2016</span><span class="description">Entrada en vigor de la <span class="doc-pill">Norma 5.2-IC de Drenaje Superficial</span>.</span></li>
+        </ul>
+
+        <h2>MEB1T9. Firmes (II)</h2>
+        <ul>
+            <li><span class="date-pill decade-2020">2023</span><span class="description">Publicación de la <span class="pill-blue">Orden Circular 2/2023</span> sobre reutilización de firmes.</span></li>
+            <li><span class="date-pill decade-2020">2024</span><span class="description">Aprobación de la <span class="pill-blue">OC 3/2024</span> sobre cálculo de la huella de carbono en firmes.</span></li>
+        </ul>
+
+        <h2>MEB1T10. Obras de paso</h2>
+        <ul>
+            <li><span class="date-pill decade-1990">1992</span><span class="description">Publicación de la <span class="pill-blue">Nota de servicio sobre losas de transición</span>.</span></li>
+            <li><span class="date-pill decade-1990">1995</span><span class="description">Publicación de la <span class="pill-blue">Nota de servicio sobre aparatos de apoyo</span>.</span></li>
+            <li><span class="date-pill decade-1990">1996</span><span class="description">Publicación de las <strong>Recomendaciones RPM-96</strong> (puentes metálicos) y <strong>RPX-96</strong> (puentes mixtos).</span></li>
+            <li><span class="date-pill decade-1990">1999</span><span class="description">Publicación de las <strong>Recomendaciones para pruebas de carga</strong>.</span></li>
+            <li><span class="date-pill decade-2000">2007</span><span class="description">Publicación de la <span class="pill-blue">Nota de servicio sobre cimbras autolanzables</span>.</span></li>
+            <li><span class="date-pill decade-2000">2009</span><span class="description">Publicación de la <span class="doc-pill">Guía para inspecciones básicas</span>.</span></li>
+            <li><span class="date-pill decade-2010">2012</span><span class="description">Publicación de la <span class="doc-pill">Guía para inspecciones principales</span>.</span></li>
+            <li><span class="date-pill decade-2020">2021</span><span class="description">Aprobación del <span class="law-pill">Código Estructural (RD 470/2021)</span> y la <span class="pill-blue">OC 2/2021</span> sobre monitorización de estructuras.</span></li>
+        </ul>
+
+        <h2>MEB1T11. Túneles en carreteras (I)</h2>
+        <ul>
+            <li><span class="date-pill decade-1960">Años 60</span><span class="description">Gran difusión del <strong>Nuevo Método Austriaco (NMA)</strong> para la construcción de túneles.</span></li>
+            <li><span class="date-pill decade-2000">2004</span><span class="description">Aprobación de la <span class="directive-pill">Directiva 2004/54/CE</span> sobre seguridad en túneles.</span></li>
+            <li><span class="date-pill decade-2000">2006</span><span class="description">Aprobación del <span class="law-pill">Real Decreto 635/2006</span> sobre seguridad en túneles.</span></li>
+        </ul>
+
+        <h2>MEB1T12. Túneles en carreteras (II)</h2>
+        <ul>
+            <li><span class="date-pill decade-2000">2006</span><span class="description">El <span class="law-pill">RD 635/2006</span> establece la necesidad de un Plan de Adecuación de túneles.</span></li>
+            <li><span class="date-pill decade-2000">2007</span><span class="description">Aprobación del <strong>"Plan de adecuación de los túneles"</strong> y el <span class="law-pill">RD 393/2007</span> (Norma Básica de Autoprotección).</span></li>
+            <li><span class="date-pill decade-2000">2008</span><span class="description">Publicación de la <span class="pill-blue">OC 27/2008</span> sobre metodología de inspección de túneles.</span></li>
+            <li><span class="date-pill decade-2010">2012</span><span class="description">Aprobación de la metodología de análisis de riesgo <strong>MARTE</strong>.</span></li>
+            <li><span class="date-pill decade-2010">2013</span><span class="description">Publicación de la <span class="pill-blue">OC 33/2013</span> sobre el manual de explotación de túneles.</span></li>
+            <li><span class="date-pill decade-2010">2019</span><span class="description">Fecha límite original, según la <span class="directive-pill">Directiva 2004/54</span>, para la <strong>adecuación de los túneles</strong>.</span></li>
+        </ul>
+
+        <h2>MEB1T13. Señalización, balizamiento y sistemas de contención</h2>
+        <ul>
+            <li><span class="date-pill decade-1980">1987</span><span class="description">Publicación de la <span class="doc-pill">Norma 8.2-IC</span> (Marcas Viales) y <span class="doc-pill">8.3-IC</span> (Señalización de Obras).</span></li>
+            <li><span class="date-pill decade-1990">1990</span><span class="description">Publicación de la <span class="pill-blue">OC 309/90</span> sobre hitos de arista.</span></li>
+            <li><span class="date-pill decade-1990">1992</span><span class="description">Publicación del <span class="doc-pill">manual "Señales verticales de circulación"</span>.</span></li>
+            <li><span class="date-pill decade-1990">1997</span><span class="description">Publicación de los <span class="doc-pill">manuales de "Señalización de obras fijas"</span> y <span class="doc-pill">"Señalización móvil de obras"</span>.</span></li>
+            <li><span class="date-pill decade-2000">2007</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio sobre señalización horizontal</span>.</span></li>
+            <li><span class="date-pill decade-2000">2008</span><span class="description">Publicación del <span class="doc-pill">manual "Señalización del Camino de Santiago"</span>.</span></li>
+            <li><span class="date-pill decade-2010">2012</span><span class="description">Publicación de la <span class="doc-pill">Guía para el proyecto y ejecución de señalización horizontal</span>.</span></li>
+            <li><span class="date-pill decade-2010">2014</span><span class="description">Publicación de la <span class="doc-pill">Norma 8.1-IC</span> (Señalización Vertical), el <span class="doc-pill">Manual SISTHO</span> y la <span class="pill-blue">OC 35/2014</span> (sistemas de contención).</span></li>
+            <li><span class="date-pill decade-2020">2023</span><span class="description">Publicación de la <span class="pill-blue">OC 6/2023</span> sobre elementos de balizamiento.</span></li>
+        </ul>
+        
+        <h2>MEB1T14. PG-3 y Reglamento de productos de construcción</h2>
+        <ul>
+            <li><span class="date-pill decade-2010">Marzo 2019</span><span class="description">Aprobación de la <span class="pill-blue">OC 1/2019</span> sobre aplicación de los Eurocódigos.</span></li>
+        </ul>
+
+        <h2>MEB1T15. Proyectos de trazado y de construcción</h2>
+        <ul>
+            <li><span class="date-pill decade-1990">1997</span><span class="description">Aprobación del <span class="law-pill">RD 1627/1997</span> que obliga a incluir estudio de seguridad y salud en proyectos.</span></li>
+            <li><span class="date-pill decade-2010">2013</span><span class="description">Aprobación de la <span class="law-pill">Ley 21/2013 de Evaluación Ambiental</span>.</span></li>
+            <li><span class="date-pill decade-2020">2020</span><span class="description">La DGC impulsa la creación de <strong>grupos de trabajo internos para la implantación de BIM</strong>.</span></li>
+            <li><span class="date-pill decade-2020">2030</span><span class="description">Año objetivo de la <strong>Agenda 2030</strong> y la <strong>Estrategia de Movilidad</strong>, que impulsan el uso de BIM.</span></li>
+        </ul>
+
+        <h2>MEB1T16. Construcción de carreteras (I)</h2>
+        <ul>
+            <li><span class="date-pill decade-1990">1997</span><span class="description">Aprobación del <span class="law-pill">Real Decreto 1627/97</span> que establece disposiciones de seguridad y salud en obras.</span></li>
+            <li><span class="date-pill decade-2020">2024</span><span class="description">Publicación de la <span class="pill-blue">OC 4/2024</span> sobre sistema de gestión de la calidad en obras.</span></li>
+        </ul>
+
+        <h2>MEB1T18. La gestión de la RCE</h2>
+        <ul>
+            <li><span class="date-pill decade-2020">2023-2025</span><span class="description">Periodo de <strong>aportación de capital a la sociedad SEITT</strong> para cubrir el déficit generado.</span></li>
+            <li><span class="date-pill decade-2020">Dic. 2032</span><span class="description">Fecha de <strong>finalización del convenio de gestión</strong> de autopistas entre la AGE y SEITT.</span></li>
+        </ul>
+
+        <h2>MEB1T19. Conservación de carreteras (I)</h2>
+        <ul>
+            <li><span class="date-pill decade-2020">2021</span><span class="description">El MITMS plantea un nuevo modelo de contratos de conservación y explotación. Publicación de la <span class="pill-blue">Nota de Servicio 2/2021</span> sobre seguridad en conservación.</span></li>
+            <li><span class="date-pill decade-2020">2022</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio 1/2022</span> sobre sostenibilidad en centros COEX.</span></li>
+            <li><span class="date-pill decade-2020">2024/2025</span><span class="description">Periodo del <strong>plan de vialidad invernal</strong>.</span></li>
+        </ul>
+
+        <h2>MEB1T20. Conservación de carreteras (II)</h2>
+        <ul>
+            <li><span class="date-pill decade-2010">2015</span><span class="description">Publicación de la <span class="pill-blue">OC 36/2015</span> sobre criterios de iluminación.</span></li>
+            <li><span class="date-pill decade-2010">2019</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio 1/2019</span> para la redacción de proyectos de conservación.</span></li>
+        </ul>
+
+        <h2>MEB1T22. Explotación de carreteras (II)</h2>
+        <ul>
+            <li><span class="date-pill decade-1990">1997</span><span class="description">Publicación de la <span class="pill-blue">Orden de 16 de diciembre de 1997</span> sobre accesos a carreteras.</span></li>
+            <li><span class="date-pill decade-2010">2013</span><span class="description">La DGC aprueba los <strong>Mapas Estratégicos de Ruido (MER) 2ª fase</strong>.</span></li>
+            <li><span class="date-pill decade-2020">2021</span><span class="description">Publicación de la <span class="pill-blue">Orden TMA/1160/2021</span> sobre cesión de tramos a Ayuntamientos.</span></li>
+            <li><span class="date-pill decade-2020">2023</span><span class="description">Publicación de la <span class="pill-blue">Nota de Servicio 4/2023</span> sobre transportes especiales.</span></li>
+        </ul>
+
+        <h2>MEB1T23. Innovación aplicada a la movilidad</h2>
+        <ul>
+            <li><span class="date-pill decade-2010">2019</span><span class="description">Aprobación de la <span class="directive-pill">Directiva 2019/520/UE</span> sobre interoperatividad de telepeajes.</span></li>
+            <li><span class="date-pill decade-2020">Feb. 2021</span><span class="description">Puesta en circulación de un <strong>autobús autónomo en Málaga</strong> en fase de pruebas.</span></li>
+        </ul>
+
+        <h2>MEB1T24. Seguridad vial</h2>
+        <ul>
+            <li><span class="date-pill decade-1960">1960</span><span class="description">Año de referencia para comparar la evolución de las víctimas de accidentes de tráfico.</span></li>
+            <li><span class="date-pill decade-2000">2003</span><span class="description">Año de referencia para mostrar la reducción drástica en el número de fallecidos en accidentes.</span></li>
+            <li><span class="date-pill decade-2020">2022</span><span class="description">Año de referencia para los datos de índices de peligrosidad y mortalidad en la RCE.</span></li>
+            <li><span class="date-pill decade-2020">2023</span><span class="description">Año de referencia para las últimas cifras de fallecidos en siniestros de tráfico.</span></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Contenido por Temas - Carreteras MEB1</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-luckiest { font-family: 'Luckiest Guy', cursive; }
+        .text-shadow { text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25); }
+        
+        /* Estilos para el contenido inyectado */
+        .content-window dt {
+            font-weight: 700;
+            color: #1d4ed8;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #60a5fa;
+        }
+        .content-window dd {
+            margin-left: 1rem;
+            padding-left: 1rem;
+            border-left: 1px solid #e5e7eb;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        .content-window ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        .content-window li {
+            margin-bottom: 0.5rem;
+        }
+        .content-window .data-entry {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .content-window .data-pill {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            background-color: #dbeafe;
+            color: #1e4d91;
+            min-width: 120px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .content-window .time-entry {
+             display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .content-window .time-pill {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            color: #fff;
+            min-width: 100px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .content-window .pill-horas { background-color: #7dd3fc; color: #0c4a6e; }
+        .content-window .pill-dias { background-color: #6ee7b7; color: #065f46; }
+        .content-window .pill-meses { background-color: #fcd34d; color: #92400e; }
+        .content-window .pill-anos { background-color: #f87171; color: #991b1b; }
+        .content-window .pill-frecuencia { background-color: #c4b5fd; color: #5b21b6; }
+        .content-window .pill-retorno { background-color: #9ca3af; color: #1f2937; }
+        .content-window .date-pill {
+             display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            color: #fff;
+            min-width: 80px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .content-window .decade-2020 { background-color: #14b8a6; }
+        .content-window .decade-2010 { background-color: #84cc16; }
+        .content-window .decade-2000 { background-color: #f59e0b; }
+        .content-window .decade-1990 { background-color: #f97316; }
+        .content-window .decade-1980 { background-color: #ef4444; }
+        .content-window .decade-1960 { background-color: #6b7280; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="text-center w-full mb-8 relative bg-gradient-to-br from-orange-300 to-amber-400 rounded-2xl p-8 overflow-hidden shadow-xl">
+            <div class="relative">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-luckiest tracking-wider text-white mb-3 text-shadow">
+                    Visor de Contenido por Temas
+                </h1>
+                <p class="text-lg md:text-xl text-slate-800 font-luckiest tracking-wider opacity-90">
+                    Temario Carreteras MEB1
+                </p>
+            </div>
+        </header>
+
+        <main class="bg-white p-6 rounded-2xl shadow-lg">
+            <!-- Controles -->
+            <div class="mb-6">
+                <label for="topic-select" class="block text-lg font-bold text-gray-800 mb-2">Selecciona un Tema para mostrar su contenido:</label>
+                <select id="topic-select" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"></select>
+            </div>
+
+            <!-- Contenedor de Resultados -->
+            <div id="results-wrapper">
+                <div id="loading-spinner" class="hidden text-center py-12">
+                    <i class="fas fa-spinner fa-spin text-5xl text-blue-600"></i>
+                    <p class="mt-4 text-xl font-semibold text-gray-700">Cargando contenido del tema...</p>
+                </div>
+                <div id="results-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Las ventanas de resultados se insertarán aquí -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const topicSelect = document.getElementById('topic-select');
+            const resultsGrid = document.getElementById('results-grid');
+            const loadingSpinner = document.getElementById('loading-spinner');
+
+            const topics = [
+                "MEB1T1. La legislación de Carreteras", "MEB1T2. La planificación estratégica", "MEB1T3. Estudios de carreteras (I)",
+                "MEB1T4. Estudios de carreteras (II)", "MEB1T5. Trazado de carreteras", "MEB1T6. Drenaje superficial y subterráneo",
+                "MEB1T7. Movimiento de tierras", "MEB1T8. Firmes (I)", "MEB1T9. Firmes (II)", "MEB1T10. Obras de paso",
+                "MEB1T11. Túneles en carreteras (I)", "MEB1T12. Túneles en carreteras (II)", "MEB1T13. Señalización y sistemas de contención",
+                "MEB1T14. PG-3 y el Reglamento UE 305/2011", "MEB1T15. Proyectos de trazado y de construcción", "MEB1T16. Construcción de carreteras (I)",
+                "MEB1T17. Construcción de carreteras (II)", "MEB1T18. La gestión de la RCE", "MEB1T19. Conservación de carreteras (I)",
+                "MEB1T20. Conservación de carreteras (II)", "MEB1T21. Explotación de carreteras (I)", "MEB1T22. Explotación de carreteras (II)",
+                "MEB1T23. Innovación aplicada a la movilidad", "MEB1T24. Seguridad vial"
+            ];
+
+            const sourceFiles = [
+                { name: 'Definiciones', path: 'DEFINICIONES_CAR.html', color: 'bg-violet-500' },
+                { name: 'Listas', path: 'LISTAS_CAR.html', color: 'bg-fuchsia-500' },
+                { name: 'Normativa', path: 'NORMATIVA_CAR.html', color: 'bg-amber-500' },
+                { name: 'Números', path: 'NUMEROS_CAR.html', color: 'bg-rose-500' },
+                { name: 'Plazos', path: 'PLAZOS_CAR.html', color: 'bg-sky-500' },
+                { name: 'Años', path: 'AÑOS_CAR.html', color: 'bg-lime-500' }
+            ];
+
+            // Poblar el dropdown de temas
+            topics.forEach(topic => {
+                const option = document.createElement('option');
+                option.value = topic;
+                option.textContent = topic;
+                topicSelect.appendChild(option);
+            });
+
+            // Función para mostrar el contenido del tema seleccionado
+            const displayTopicContent = async () => {
+                const selectedTopic = topicSelect.value;
+                
+                resultsGrid.innerHTML = '';
+                loadingSpinner.style.display = 'block';
+
+                const parser = new DOMParser();
+                
+                // Procesar todos los archivos en paralelo
+                await Promise.all(sourceFiles.map(async (fileInfo) => {
+                    try {
+                        // FIX: Prepend './' to the path to make it a valid relative URL for fetch.
+                        const response = await fetch('./' + fileInfo.path);
+                        if (!response.ok) {
+                            console.error(`Error al cargar el archivo: ${fileInfo.path}`);
+                            return; // Saltar este archivo si hay un error
+                        }
+                        const htmlText = await response.text();
+                        const doc = parser.parseFromString(htmlText, 'text/html');
+
+                        // Encontrar el encabezado del tema
+                        const topicHeaders = Array.from(doc.querySelectorAll('h2'));
+                        const topicHeader = topicHeaders.find(h => h.textContent.trim() === selectedTopic);
+                        
+                        let contentHTML = '<p class="text-gray-500 text-center p-4">No se encontró contenido para este tema en este archivo.</p>';
+
+                        if (topicHeader) {
+                            // Extraer el contenido asociado a ese tema
+                            let currentNode = topicHeader.nextElementSibling;
+                            const contentBlock = document.createElement('div');
+                            while (currentNode && currentNode.tagName !== 'H2') {
+                                contentBlock.appendChild(currentNode.cloneNode(true));
+                                currentNode = currentNode.nextElementSibling;
+                            }
+                            if (contentBlock.hasChildNodes()) {
+                                contentHTML = contentBlock.innerHTML;
+                            }
+                        }
+                        
+                        // Crear la ventana de contenido
+                        const windowDiv = document.createElement('div');
+                        windowDiv.className = 'flex flex-col bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden';
+                        windowDiv.innerHTML = `
+                            <div class="${fileInfo.color} text-white font-bold text-lg p-3 text-center shadow-md">
+                                ${fileInfo.name}
+                            </div>
+                            <div class="content-window p-4 overflow-y-auto h-96">
+                                ${contentHTML}
+                            </div>
+                        `;
+                        resultsGrid.appendChild(windowDiv);
+
+                    } catch (error) {
+                        console.error(`Error procesando el archivo ${fileInfo.path}:`, error);
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'bg-white rounded-xl shadow-lg border border-red-300 p-4';
+                        errorDiv.innerHTML = `<h3 class="font-bold text-red-600">${fileInfo.name}</h3><p>Error al cargar el contenido.</p>`;
+                        resultsGrid.appendChild(errorDiv);
+                    }
+                }));
+
+                loadingSpinner.style.display = 'none';
+            };
+
+            // Event listener para el cambio en el selector de temas
+            topicSelect.addEventListener('change', displayTopicContent);
+
+            // Cargar el contenido del primer tema al iniciar la página
+            displayTopicContent();
+        });
+    </script>
+</body>
+</html>

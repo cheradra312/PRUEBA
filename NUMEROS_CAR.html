@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Numéricos Detallados (Temas 1-8)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .data-entry {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .data-entry:last-child {
+            border-bottom: none;
+        }
+        .data-pill {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            background-color: #dbeafe;
+            color: #1e4d91;
+            min-width: 120px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .description {
+            display: inline;
+            color: #4b5563;
+        }
+        .description strong {
+            color: #111827;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Datos Numéricos Detallados (Temas 1-8)</h1>
+
+        <h2>MEB1T1. La legislación de Carreteras</h2>
+        <div class="data-entry">
+            <span class="data-pill">26.500 km</span>
+            <span class="description">Longitud total de la <strong>Red de Carreteras del Estado (RCE)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1.400 km</span>
+            <span class="description">Longitud de <strong>autopistas de peaje</strong> en la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">10.300 km</span>
+            <span class="description">Longitud de <strong>autovías y autopistas libres</strong> en la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">500 km</span>
+            <span class="description">Longitud de <strong>carreteras multicarril</strong> en la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">14.300 km</span>
+            <span class="description">Longitud de <strong>carreteras convencionales</strong> en la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">8 m / 3 m</span>
+            <span class="description">Anchura de la franja de <strong>dominio público</strong> desde la explanación (autopistas/autovías y resto).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">25 m / 8 m</span>
+            <span class="description">Anchura de la zona de <strong>servidumbre</strong> desde el dominio público (autopistas/autovías y resto).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">100 m / 50 m</span>
+            <span class="description">Anchura de la zona de <strong>afección</strong> desde la servidumbre (autopistas/autovías y resto).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">50 m / 25 m</span>
+            <span class="description">Distancia de la <strong>línea límite de edificación</strong> desde la calzada (autopistas/autovías y resto).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">300 a 3.000 €</span>
+            <span class="description">Cuantía de la <strong>multa para infracciones leves</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3.001 a 15.000 €</span>
+            <span class="description">Cuantía de la <strong>multa para infracciones graves</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">15.001 a 300.000 €</span>
+            <span class="description">Cuantía de la <strong>multa para infracciones muy graves</strong>.</span>
+        </div>
+
+        <h2>MEB1T2. La planificación estratégica</h2>
+        <div class="data-entry">
+            <span class="data-pill">1:10.000</span>
+            <span class="description">Escala de los <strong>estudios previos</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1:5.000</span>
+            <span class="description">Escala de los <strong>estudios informativos</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1:1.000</span>
+            <span class="description">Escala de los <strong>proyectos de trazado</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">8,5 M€/km</span>
+            <span class="description"><strong>Coste máximo por km</strong> de autovía en el peor de los casos, según la Orden de eficiencia.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">20%</span>
+            <span class="description">Límite del presupuesto para <strong>unidades de obra no recogidas</strong> en el Cuadro de Precios de Referencia.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">15%</span>
+            <span class="description">Límite de <strong>inversión por cuestiones ambientales</strong> que no requiere justificación especial.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&lt; 1,5%</span>
+            <span class="description"><strong>Incremento de tráfico</strong> máximo a utilizar en los estudios de tráfico (1,44% anual).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&lt; 7.000 veh/día</span>
+            <span class="description">IMD para considerar una <strong>autovía de débil demanda</strong>.</span>
+        </div>
+
+        <h2>MEB1T3. Estudios de carreteras (I)</h2>
+        <div class="data-entry">
+            <span class="data-pill">4 km</span>
+            <span class="description">Lado máximo de la <strong>Red Básica Planimétrica</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">5 puntos</span>
+            <span class="description">Apoyo continuo mínimo por <strong>par estereoscópico</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1 m</span>
+            <span class="description">Equidistancia de las <strong>curvas de nivel</strong> en la restitución fotogramétrica.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">200 m</span>
+            <span class="description">Distancia media entre vértices de la <strong>Red de Bases de Replanteo</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1:200 / 1:500</span>
+            <span class="description">Escalas de <strong>levantamientos taquimétricos</strong> de detalle.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">20 m</span>
+            <span class="description">Distancia entre <strong>perfiles transversales</strong> para el estaquillado.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">50 km²</span>
+            <span class="description">Superficie que delimita la frontera entre <strong>cuencas hidrográficas grandes y pequeñas</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">≥ 0,04g</span>
+            <span class="description"><strong>Aceleración sísmica básica</strong> a partir de la cual se debe considerar la acción sísmica.</span>
+        </div>
+
+        <h2>MEB1T4. Estudios de carreteras (II)</h2>
+        <div class="data-entry">
+            <span class="data-pill">800 veh/h</span>
+            <span class="description">Capacidad de conteo en <strong>aforos manuales</strong> en periodo largo.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">2.000 veh/h</span>
+            <span class="description">Capacidad de conteo en <strong>aforos manuales</strong> en periodo corto.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~3.400</span>
+            <span class="description">Número de <strong>estaciones de aforo</strong> en la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~300</span>
+            <span class="description">Número de <strong>estaciones virtuales</strong> en autopistas de peaje.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">25.000 veh/día</span>
+            <span class="description"><strong>IMD actual</strong> aproximada en autovías.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">15%</span>
+            <span class="description">Porcentaje de <strong>vehículos pesados</strong> en la IMD media de la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">15%</span>
+            <span class="description">Porcentaje de la red de carreteras española que supone la <strong>RCE</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">50% / 65%</span>
+            <span class="description">Porcentaje del <strong>tráfico total y de pesados</strong> que concentra la RCE.</span>
+        </div>
+
+        <h2>MEB1T5. Trazado de carreteras</h2>
+        <div class="data-entry">
+            <span class="data-pill">40 a 140 km/h</span>
+            <span class="description">Rango de <strong>velocidades de proyecto</strong> consideradas en la Norma 3.1-IC.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">8% / 7%</span>
+            <span class="description"><strong>Peralte máximo</strong> en curvas (grupos 1-2 y grupo 3).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3,5 m</span>
+            <span class="description"><strong>Anchura de carril</strong> establecida con carácter general por la Norma 3.1-IC.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">10 m / 2 m</span>
+            <span class="description"><strong>Anchura mínima de la mediana</strong> (con/sin previsión de ampliación).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">6 km / 2 km</span>
+            <span class="description"><strong>Distancia mínima entre enlaces</strong> consecutivos (interurbanas y urbanas/periurbanas).</span>
+        </div>
+
+        <h2>MEB1T6. Drenaje superficial y subterráneo</h2>
+        <div class="data-entry">
+            <span class="data-pill">&lt; 6 m/s</span>
+            <span class="description"><strong>Velocidad máxima de la corriente</strong> para evitar erosión en elementos de hormigón.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">0,5 m</span>
+            <span class="description"><strong>Resguardo mínimo</strong> entre la lámina de agua y la plataforma en obras de drenaje transversal.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">60 cm - 1,2 m</span>
+            <span class="description">Distancia mínima a la que debe quedar la <strong>cota de la explanada por encima del nivel freático</strong>, según el tipo de suelo.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">2%</span>
+            <span class="description">Pendiente mínima en capas de baja permeabilidad para favorecer el <strong>flujo sub-horizontal</strong>.</span>
+        </div>
+
+        <h2>MEB1T7. Movimiento de tierras</h2>
+        <div class="data-entry">
+            <span class="data-pill">30 cm</span>
+            <span class="description"><strong>Espesor de tongada</strong> de compactación para terraplenes según el PG-3.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~50 cm</span>
+            <span class="description"><strong>Espesor de tongada</strong> para rellenos "todo-uno".</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1 m</span>
+            <span class="description">Espesor de la <strong>zona de transición a coronación</strong> en pedraplenes.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~100%</span>
+            <span class="description">Porcentaje de la <strong>densidad Próctor</strong> exigido en la compactación.</span>
+        </div>
+
+        <h2>MEB1T8. Firmes (I)</h2>
+        <div class="data-entry">
+            <span class="data-pill">≥ 15 cm</span>
+            <span class="description">Espesor de pavimento bituminoso para que un firme se considere <strong>semiflexible</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">≥ 18 cm</span>
+            <span class="description">Espesor de capas tratadas para que un firme se considere <strong>semirrígido</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3% - 10%</span>
+            <span class="description"><strong>Proporción de ligante</strong> sobre la masa de áridos en mezclas bituminosas.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">≤3 cm</span>
+            <span class="description">Espesor total de los <strong>microaglomerados en frío</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">4 cm</span>
+            <span class="description">Espesor de las <strong>mezclas drenantes (PA)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">2-3 cm</span>
+            <span class="description">Espesor de las <strong>mezclas discontinuas (BBTM)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1-2 cm</span>
+            <span class="description">Espesor de las <strong>mezclas ultrafinas (AUTL)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">≥ 11.000 MPa</span>
+            <span class="description">Módulo dinámico de las <strong>mezclas de alto módulo (MAM)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~40 kg/m³</span>
+            <span class="description"><strong>Dosificación normal de fibras de acero</strong> en pavimentos de hormigón.</span>
+        </div>
+
+        <h2>MEB1T9. Firmes (II)</h2>
+        <div class="data-entry">
+            <span class="data-pill">80 km/h</span>
+            <span class="description">Velocidad del vehículo patrón para calcular el <strong>Índice de Regularidad Internacional (IRI)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">0,5 mm</span>
+            <span class="description">Espesor de la <strong>película de agua</strong> en la medición del coeficiente de resistencia al deslizamiento.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 70.000 m²</span>
+            <span class="description">Superficie de rehabilitación a partir de la cual es <strong>obligatorio estudiar materiales reciclados</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">6 a 12 cm</span>
+            <span class="description">Espesor de la capa en la <strong>reutilización in situ con emulsión</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">0,75</span>
+            <span class="description">Factor de minoración del espesor para capas <strong>reutilizadas in situ con emulsión</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">20 a 35 cm</span>
+            <span class="description">Espesor de la capa resultante en la <strong>reutilización in situ con cemento</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">0,5 mm</span>
+            <span class="description">Abertura máxima de las fisuras en <strong>pavimentos continuos de hormigón armado</strong>.</span>
+        </div>
+
+        <h2>MEB1T10. Obras de paso</h2>
+        <div class="data-entry">
+            <span class="data-pill">hasta 20 m</span>
+            <span class="description">Luces habituales para tableros de <strong>hormigón armado</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">a partir de 20 m</span>
+            <span class="description">Luces a partir de las cuales se usa <strong>hormigón pretensado</strong> en tableros in situ.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">hasta 8 m</span>
+            <span class="description">Luz libre que no suelen superar los <strong>pasos inferiores de camino</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">hasta 40-45 m</span>
+            <span class="description">Luces habituales para tableros de <strong>vigas prefabricadas</strong> y <strong>tableros losa</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">hasta 250 m</span>
+            <span class="description">Luces que se pueden alcanzar en viaductos construidos por <strong>avance en voladizo</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">25.000</span>
+            <span class="description">Número de <strong>obras de paso</strong> en la RCE.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">2/3</span>
+            <span class="description">Proporción de obras de paso consideradas <strong>"puentes"</strong> (luces > 10 m).</span>
+        </div>
+
+        <h2>MEB1T11. Túneles en carreteras (I)</h2>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 500 m</span>
+            <span class="description">Distancia a partir de la cual se usan <strong>dumpers</strong> para retirar escombro en túneles.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 70 m²</span>
+            <span class="description">Sección de túnel a partir de la cual se usan <strong>dumpers</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">40-50 m²</span>
+            <span class="description">Sección de túnel a partir de la cual es habitual <strong>excavar por fases</strong> (avance y destroza).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&lt; 5 cm</span>
+            <span class="description">Espesor de <strong>gunita en masa</strong> para sellar la roca.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~30 cm</span>
+            <span class="description">Espesor habitual del <strong>revestimiento estructural de hormigón</strong> en masa.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3-10%</span>
+            <span class="description">Luminosidad de la <strong>zona de umbral</strong> de un túnel respecto a la zona de acceso.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">100-150 m</span>
+            <span class="description">Intervalo de colocación de <strong>puestos de emergencia</strong> en túneles.</span>
+        </div>
+
+        <h2>MEB1T12. Túneles en carreteras (II)</h2>
+        <div class="data-entry">
+            <span class="data-pill">250 M€</span>
+            <span class="description">Inversión programada en el <strong>Plan de adecuación de túneles</strong> hasta 2019.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1,15</span>
+            <span class="description"><strong>Índice de Riesgo (IR)</strong> máximo para que un túnel se considere seguro sin medidas adicionales.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1,5</span>
+            <span class="description"><strong>Índice de Riesgo (IR)</strong> a partir del cual un túnel tiene elevada peligrosidad.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 500 m</span>
+            <span class="description">Longitud de túnel a partir de la cual se llevaron a cabo medidas compensatorias deducidas del análisis de riesgo.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 3%</span>
+            <span class="description"><strong>Pendiente</strong> en un túnel que requiere un análisis de riesgo.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&lt; 3,5 m</span>
+            <span class="description"><strong>Anchura del carril derecho</strong> en un túnel que requiere un análisis de riesgo.</span>
+        </div>
+
+        <h2>MEB1T13. Señalización, balizamiento y sistemas de contención</h2>
+        <div class="data-entry">
+            <span class="data-pill">800 veces</span>
+            <span class="description">Relación entre la <strong>distancia de visibilidad fisiológica</strong> y la altura de la letra en una señal.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">4 líneas</span>
+            <span class="description">Número máximo de líneas en <strong>carteles de dirección propia</strong> y <strong>carteles de salida</strong> en autovías.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">150-250 m</span>
+            <span class="description">Distancia a la que se colocan las <strong>señales de peligro</strong> antes del mismo.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">50 m</span>
+            <span class="description"><strong>Distancia mínima entre señales</strong> consecutivas.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 15 cm</span>
+            <span class="description">Diámetro de <strong>árboles</strong> considerados como obstáculo en los márgenes.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 7 cm</span>
+            <span class="description">Altura a partir de la cual un <strong>muro, arqueta, etc.</strong> se considera obstáculo.</span>
+        </div>
+
+        <h2>MEB1T14. PG-3 y el Reglamento UE 305/2011</h2>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 70 °C</span>
+            <span class="description">Temperatura a partir de la cual el <strong>Código Estructural</strong> no es de aplicación en estructuras.</span>
+        </div>
+
+        <h2>MEB1T15. Proyectos de trazado y de construcción</h2>
+        <div class="data-entry">
+            <span class="data-pill">500.000 €</span>
+            <span class="description">Presupuesto de obra (sin IVA) a partir del cual es <strong>obligatorio el informe de supervisión</strong> del proyecto.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 600.000 €</span>
+            <span class="description">Presupuesto a partir del cual es obligatoria la partida de <strong>"Limpieza y terminación de las obras"</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">75 M ptas</span>
+            <span class="description">Presupuesto (antiguo) a partir del cual se exige un <strong>Estudio de Seguridad y Salud</strong>.</span>
+        </div>
+
+        <h2>MEB1T16. Construcción de carreteras (I)</h2>
+        <div class="data-entry">
+            <span class="data-pill">1%</span>
+            <span class="description"><strong>Coste máximo del control exterior</strong> de la calidad, a cuenta del contratista, sobre el presupuesto de la obra.</span>
+        </div>
+
+        <h2>MEB1T17. Construcción de carreteras (II)</h2>
+        <div class="data-entry">
+            <span class="data-pill">20%</span>
+            <span class="description">Límite de <strong>modificación de un contrato de obras</strong> que resulta obligatoria para el contratista.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">10%</span>
+            <span class="description">Límite de <strong>exceso de mediciones</strong> que no requiere aprobación previa.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3%</span>
+            <span class="description">Límite de <strong>unidades con precios nuevos</strong> que no supongan incremento del precio global del contrato.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">2%</span>
+            <span class="description"><strong>Indemnización</strong> al contratista por resolución de contrato debido a demora en la comprobación del replanteo.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3%</span>
+            <span class="description"><strong>Indemnización</strong> al contratista por desistimiento de la Administración antes del inicio de las obras.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">6%</span>
+            <span class="description"><strong>Indemnización</strong> al contratista por desistimiento de la Administración una vez iniciadas las obras.</span>
+        </div>
+
+        <h2>MEB1T18. La gestión de la RCE</h2>
+        <div class="data-entry">
+            <span class="data-pill">15%</span>
+            <span class="description">Porcentaje máximo de <strong>ampliación del plazo</strong> de una concesión para restablecer el equilibrio económico.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">128 M€</span>
+            <span class="description">Aportación de capital a <strong>SEITT</strong> para cubrir el déficit generado en los años 2023-2025.</span>
+        </div>
+        
+        <h2>MEB1T19. Conservación de carreteras (I)</h2>
+        <div class="data-entry">
+            <span class="data-pill">20</span>
+            <span class="description">Número de <strong>provincias afectadas regularmente</strong> por la formación de hielo y nevadas.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">2.000 km</span>
+            <span class="description">Longitud de <strong>autovías y autopistas</strong> que requieren actuaciones regulares de vialidad invernal.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">8.000 km</span>
+            <span class="description">Longitud de <strong>carreteras convencionales</strong> que requieren actuaciones regulares de vialidad invernal.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3.600</span>
+            <span class="description">Número de <strong>trabajadores</strong> del plan de vialidad invernal 2024/2025.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1.400</span>
+            <span class="description">Número de <strong>máquinas quitanieves</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">250.000 t</span>
+            <span class="description">Cantidad de <strong>fundentes</strong> almacenados.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">400</span>
+            <span class="description">Número de <strong>depósitos de salmuera</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">70 M€</span>
+            <span class="description"><strong>Coste anual estimado</strong> del plan de vialidad invernal.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">115.000</span>
+            <span class="description">Número de <strong>carteles inventariados</strong> en la RCE con el sistema InCa.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">660.000</span>
+            <span class="description">Número de <strong>señales inventariadas</strong> en la RCE con el sistema InCa.</span>
+        </div>
+
+        <h2>MEB1T20. Conservación de carreteras (II)</h2>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 5.000</span>
+            <span class="description">IMD a partir de la cual se admiten <strong>giros a la izquierda</strong> en reordenación de accesos existentes.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">≥ 80.000</span>
+            <span class="description">IMD para <strong>iluminar autovías</strong> en suelo urbano.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">≥ 60.000</span>
+            <span class="description">IMD para <strong>iluminar autovías</strong> en suelo urbano si hay más de 120 días de lluvia/año.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 120</span>
+            <span class="description"><strong>Días de lluvia al año</strong>, como criterio para justificar la iluminación con menor IMD.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 50%</span>
+            <span class="description">Porcentaje de <strong>accidentes nocturnos</strong> en un TCA para justificar su iluminación.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 10.000</span>
+            <span class="description">IMD en una carretera secundaria para justificar la <strong>iluminación de un cruce</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 200 m</span>
+            <span class="description">Longitud de <strong>túnel</strong> a partir de la cual se iluminará siempre.</span>
+        </div>
+
+        <h2>MEB1T21. Explotación de carreteras (I)</h2>
+        <div class="data-entry">
+            <span class="data-pill">300 a 3.000 €</span>
+            <span class="description">Cuantía de la <strong>multa para infracciones leves</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3.001 a 15.000 €</span>
+            <span class="description">Cuantía de la <strong>multa para infracciones graves</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">15.001 a 300.000 €</span>
+            <span class="description">Cuantía de la <strong>multa para infracciones muy graves</strong>.</span>
+        </div>
+
+        <h2>MEB1T22. Explotación de carreteras (II)</h2>
+        <div class="data-entry">
+            <span class="data-pill">5 km</span>
+            <span class="description">Distancia antes y después de variantes o circunvalaciones donde se <strong>prohíben áreas de servicio</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3 millones</span>
+            <span class="description">Número de vehículos anuales a partir del cual la Ley de Ruido exigía la elaboración de <strong>Mapas Estratégicos de Ruido</strong>.</span>
+        </div>
+
+        <h2>MEB1T23. Innovación aplicada a la movilidad por carretera</h2>
+        <div class="data-entry">
+            <span class="data-pill">80% / 20%</span>
+            <span class="description">Proporción de <strong>personas/procesos vs. tecnología</strong> en la implantación de la metodología BIM.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 26.000 km</span>
+            <span class="description">Extensión de la <strong>red principal gestionada</strong> por la DGC.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">1.900</span>
+            <span class="description">Número de <strong>empleados</strong> de la DGC.</span>
+        </div>
+
+        <h2>MEB1T24. Seguridad vial</h2>
+        <div class="data-entry">
+            <span class="data-pill">1.806</span>
+            <span class="description">Número de <strong>personas fallecidas</strong> en siniestros de tráfico durante 2023.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3%</span>
+            <span class="description"><strong>Aumento de fallecidos</strong> en 2023 respecto a 2022.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">52%</span>
+            <span class="description">Porcentaje de <strong>fallecidos vulnerables</strong> sobre el total.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">80%</span>
+            <span class="description">Porcentaje de <strong>fallecidos vulnerables</strong> en vías urbanas.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~8</span>
+            <span class="description"><strong>Índice de peligrosidad</strong> en la RCE en 2022 (Accidentes con víctimas / 10⁸ veh-km).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">~0,3</span>
+            <span class="description"><strong>Índice de mortalidad</strong> en la RCE en 2022 (Víctimas mortales / 10⁸ veh-km).</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">3 km</span>
+            <span class="description">Longitud máxima, por lo general, de un <strong>Tramo de Concentración de Accidentes (TCA)</strong>.</span>
+        </div>
+        <div class="data-entry">
+            <span class="data-pill">&gt; 10 km</span>
+            <span class="description">Longitud de obra de <strong>acondicionamiento sustancial</strong> a la que se aplica el RD 345/2011.</span>
+        </div>
+
+    </div>
+</body>
+</html>

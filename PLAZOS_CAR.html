@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plazos y Periodos de Tiempo (Temas 1-24)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #343a40;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .time-entry {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .time-entry:last-child {
+            border-bottom: none;
+        }
+        .time-pill {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            color: #fff;
+            min-width: 100px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .description {
+            display: inline;
+            color: #4b5563;
+        }
+        .description strong {
+            color: #111827;
+        }
+        
+        /* --- Legend Styles --- */
+        .legend {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            margin: 1rem auto 2rem auto;
+            max-width: 700px;
+        }
+        .legend h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: #343a40;
+            text-align: center;
+            border-bottom: none;
+        }
+        .legend ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .legend li {
+            display: flex;
+            align-items: center;
+        }
+        .legend .color-box {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+            border-radius: 0.25rem;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* --- Progressive Time Colors --- */
+        .pill-horas { background-color: #7dd3fc; color: #0c4a6e; } /* Light Blue */
+        .pill-dias { background-color: #6ee7b7; color: #065f46; } /* Green */
+        .pill-meses { background-color: #fcd34d; color: #92400e; } /* Amber */
+        .pill-anos { background-color: #f87171; color: #991b1b; } /* Red */
+        .pill-frecuencia { background-color: #c4b5fd; color: #5b21b6; } /* Violet */
+        .pill-retorno { background-color: #9ca3af; color: #1f2937; } /* Gray */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plazos y Periodos de Tiempo (Temas 1-24)</h1>
+
+        <div class="legend">
+            <h3>Leyenda de Plazos</h3>
+            <ul>
+                <li><span class="color-box pill-horas"></span> Horas</li>
+                <li><span class="color-box pill-dias"></span> Días</li>
+                <li><span class="color-box pill-meses"></span> Meses</li>
+                <li><span class="color-box pill-anos"></span> Años</li>
+                <li><span class="color-box pill-frecuencia"></span> Frecuencias</li>
+                <li><span class="color-box pill-retorno"></span> Periodos de Retorno</li>
+            </ul>
+        </div>
+
+        <h2>MEB1T1. La legislación de Carreteras</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">1 año</span>
+            <span class="description">Plazo para la <strong>aprobación del reglamento</strong> general de desarrollo de la Ley 37/2015.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">6 años</span>
+            <span class="description">Plazo de <strong>prescripción para infracciones muy graves</strong> en materia de carreteras.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">4 años</span>
+            <span class="description">Plazo de <strong>prescripción para infracciones graves</strong> en materia de carreteras.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">1 año</span>
+            <span class="description">Plazo de <strong>prescripción para infracciones leves</strong> en materia de carreteras.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">2 meses</span>
+            <span class="description">Plazo para que CCAA y entidades locales emitan <strong>informe sobre la línea límite de edificación</strong>.</span>
+        </div>
+
+        <h2>MEB1T2. La planificación estratégica</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-frecuencia">Anualmente</span>
+            <span class="description">Frecuencia de <strong>actualización del Cuadro de Precios de Referencia</strong> de la DGC.</span>
+        </div>
+
+        <h2>MEB1T3. Estudios de carreteras (I)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">T = 100 años</span>
+            <span class="description"><strong>Periodo de retorno</strong> para el cálculo de caudales en <strong>obras de drenaje transversal</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">T = 500 años</span>
+            <span class="description"><strong>Periodo de retorno</strong> para el cálculo de caudales en caso de <strong>daños catastróficos o puentes</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">T = 500 años</span>
+            <span class="description"><strong>Periodo de retorno</strong> del sismo para determinar la <strong>aceleración sísmica básica</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">T = 100 años</span>
+            <span class="description"><strong>Periodo de retorno</strong> para el sismo bajo el cual la <strong>estructura debe ser elástica</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">100 años</span>
+            <span class="description"><strong>Vida útil de referencia</strong> de una estructura para el cálculo de probabilidades sísmicas.</span>
+        </div>
+
+        <h2>MEB1T4. Estudios de carreteras (II)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-horas">16 horas</span>
+            <span class="description">Duración mínima habitual de las <strong>encuestas de origen y destino</strong> en carretera.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-frecuencia">Todo el año</span>
+            <span class="description">Frecuencia de aforo de las <strong>estaciones permanentes</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">84 días/año</span>
+            <span class="description">Frecuencia de aforo de las <strong>estaciones semipermanentes</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">12 días/año</span>
+            <span class="description">Frecuencia de aforo de las <strong>estaciones secundarias</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">2 días/año</span>
+            <span class="description">Frecuencia de aforo de las <strong>estaciones de cobertura</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-frecuencia">Anualmente</span>
+            <span class="description">Frecuencia con la que se elabora el <strong>Mapa de Tráfico</strong>.</span>
+        </div>
+
+        <h2>MEB1T5. Trazado de carreteras</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">20 años</span>
+            <span class="description"><strong>Año horizonte</strong> para el cálculo del tráfico previsible para dimensionar la sección transversal.</span>
+        </div>
+
+        <h2>MEB1T6. Drenaje superficial y subterráneo</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">25 años</span>
+            <span class="description"><strong>Periodo de retorno (T)</strong> para el <strong>drenaje de plataforma y márgenes</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">50 años</span>
+            <span class="description"><strong>Periodo de retorno (T)</strong> para el <strong>desagüe por bombeo</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">100 años</span>
+            <span class="description"><strong>Periodo de retorno (T)</strong> mínimo para <strong>obras de drenaje transversal</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-retorno">500 años</span>
+            <span class="description"><strong>Periodo de retorno (T)</strong> para estudiar la <strong>socavación en cimientos</strong> de puentes.</span>
+        </div>
+        
+        <h2>MEB1T10. Obras de paso</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">15 meses</span>
+            <span class="description">Periodicidad de las <strong>inspecciones básicas</strong> en obras de paso.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">5 años</span>
+            <span class="description">Intervalo entre <strong>inspecciones principales</strong> en obras de paso.</span>
+        </div>
+
+        <h2>MEB1T11. Túneles en carreteras (I)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">5 años</span>
+            <span class="description">Periodicidad mínima de las <strong>inspecciones de la Autoridad Administrativa</strong> en túneles.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-horas">24 horas/día</span>
+            <span class="description">Disponibilidad de personal en el <strong>centro de control</strong> para túneles de cierta longitud.</span>
+        </div>
+
+        <h2>MEB1T12. Túneles en carreteras (II)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">5 años</span>
+            <span class="description">Periodicidad máxima entre <strong>inspecciones sucesivas</strong> de túneles.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">6 meses</span>
+            <span class="description">Plazo recomendado para realizar una <strong>inspección después de la entrada en servicio</strong> de un túnel.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">3 años</span>
+            <span class="description">Periodicidad máxima de inspección para <strong>túneles de más de 2.000 m</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">4 años</span>
+            <span class="description">Periodicidad máxima de inspección para <strong>túneles entre 1.000 y 2.000 m</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">3 años</span>
+            <span class="description">Periodicidad máxima para la <strong>revisión del Manual de Explotación</strong> de un túnel.</span>
+        </div>
+
+        <h2>MEB1T15. Proyectos de trazado y de construcción</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">3 meses</span>
+            <span class="description">Plazo para que el MITMS emita <strong>informe vinculante sobre planeamiento urbanístico</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">30 días lab.</span>
+            <span class="description">Plazo de obra a partir del cual se exige <strong>Estudio de Seguridad y Salud</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">30 días háb.</span>
+            <span class="description">Periodo de <strong>información pública para los EDTU</strong>.</span>
+        </div>
+         <div class="time-entry">
+            <span class="time-pill pill-anos">5 años</span>
+            <span class="description">Plazo máximo para la <strong>actualización de los EDTUs</strong>.</span>
+        </div>
+
+        <h2>MEB1T16. Construcción de carreteras (I)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-frecuencia">Trimestral</span>
+            <span class="description">Frecuencia del <strong>informe de seguimiento de obra</strong> del coordinador de seguridad.</span>
+        </div>
+
+        <h2>MEB1T17. Construcción de carreteras (II)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">3 días</span>
+            <span class="description">Plazo mínimo de <strong>audiencia al contratista</strong> ante una modificación.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">6 meses</span>
+            <span class="description">Plazo para <strong>aprobar técnicamente el proyecto</strong> en una modificación provisional.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">8 meses</span>
+            <span class="description">Plazo para <strong>aprobar el expediente de modificación</strong> del contrato.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">30 días</span>
+            <span class="description">Plazo para dar cuenta al Consejo de Ministros de un <strong>contrato de emergencia</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">1 mes</span>
+            <span class="description">Plazo para <strong>iniciar las actuaciones de emergencia</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">4 meses</span>
+            <span class="description">Plazo de <strong>suspensión de la iniciación de obras</strong> que puede causar la resolución.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">8 meses</span>
+            <span class="description">Plazo de <strong>suspensión de obras iniciadas</strong> que puede causar la resolución.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">15 días</span>
+            <span class="description">Plazo para resolver una <strong>impugnación de valoración</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">30 días</span>
+            <span class="description">Plazo para el <strong>abono de una certificación</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">3 meses</span>
+            <span class="description">Plazo para <strong>aprobar la certificación final</strong> a partir de la recepción.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">1 año</span>
+            <span class="description"><strong>Plazo de garantía</strong> mínimo, salvo casos especiales.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">15 días</span>
+            <span class="description">Plazo anterior a fin de garantía para <strong>redactar informe de estado</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">15 años</span>
+            <span class="description">Plazo de <strong>responsabilidad por vicios ocultos</strong>.</span>
+        </div>
+
+        <h2>MEB1T18. La gestión de la RCE</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">1 mes</span>
+            <span class="description">Periodo de <strong>información pública</strong> para el estudio de viabilidad de una concesión.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">5 años</span>
+            <span class="description">Plazo a partir del cual la <strong>duración de una concesión</strong> se calcula por recuperación de inversión.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">40 años</span>
+            <span class="description"><strong>Duración máxima</strong> de los contratos de concesión de obras.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">10 años</span>
+            <span class="description"><strong>Duración del convenio</strong> de gestión directa de autopistas entre AGE y SEITT.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">7 años</span>
+            <span class="description"><strong>Prórroga máxima</strong> posible para el convenio de gestión de SEITT.</span>
+        </div>
+
+        <h2>MEB1T19. Conservación de carreteras (I)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-meses">Nov - Abr</span>
+            <span class="description">Meses en los que generalmente se desarrolla la <strong>campaña de vialidad invernal</strong>.</span>
+        </div>
+
+        <h2>MEB1T20. Conservación de carreteras (II)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">2 años</span>
+            <span class="description">Periodo de <strong>análisis de accidentalidad nocturna</strong> para justificar la iluminación de un tramo.</span>
+        </div>
+        
+        <h2>MEB1T21. Explotación de carreteras (I)</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">3 años</span>
+            <span class="description">Plazo de <strong>prescripción para sanciones muy graves</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">2 años</span>
+            <span class="description">Plazo de <strong>prescripción para sanciones graves</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">1 año</span>
+            <span class="description">Plazo de <strong>prescripción para sanciones leves</strong>.</span>
+        </div>
+
+        <h2>MEB1T24. Seguridad vial</h2>
+        <div class="time-entry">
+            <span class="time-pill pill-dias">30 días</span>
+            <span class="description">Plazo internacional para considerar una <strong>víctima mortal por accidente</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">3 años</span>
+            <span class="description">Plazo de explotación mínimo para identificar un <strong>TCA</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">3 años</span>
+            <span class="description">Frecuencia de <strong>identificación de TCA y TAPM</strong>.</span>
+        </div>
+        <div class="time-entry">
+            <span class="time-pill pill-anos">6 años</span>
+            <span class="description">Frecuencia mínima de las <strong>inspecciones periódicas de seguridad viaria</strong>.</span>
+        </div>
+    </div>
+</body>
+</html>
